@@ -12,7 +12,7 @@ import UIKit
 
 
 /// https://gist.github.com/gotev/76df9006674762859626846cf171ff80
-extension UIColor {
+@objc extension UIColor {
     
     open var redValue: CGFloat{
         return cgColor.components! [0]
@@ -46,7 +46,7 @@ extension UIColor {
         return UIColor(red: (1.0 - self.redValue), green: (1.0 - greenValue), blue: (1.0 - self.blueValue), alpha: self.alphaValue) // Assuming you want the same alpha value.
     }
     
-    public convenience init(hex: String) {
+    @objc public convenience init(hex: String) {
         let scanner = Scanner(string: hex)
         scanner.scanLocation = 0
         

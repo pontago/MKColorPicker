@@ -12,15 +12,15 @@ import UIKit
 
 open class ColorPickerViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    open var selectedColor:((_ color:UIColor)->())?
-    open var autoDismissAfterSelection = true
-    open var style: ColorPickerViewStyle = .circle{
+    @objc open var selectedColor:((_ color:UIColor)->())?
+    @objc open var autoDismissAfterSelection = true
+    @objc open var style: ColorPickerViewStyle = .circle{
         didSet{
             colorPickerView.style = style
         }
     }
     
-    open var defaultPaletteColors = [#colorLiteral(red: 1, green: 0.5411764706, blue: 0.5019607843, alpha: 1), #colorLiteral(red: 1, green: 0.09019607843, blue: 0.2666666667, alpha: 1), #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1),
+    @objc open var defaultPaletteColors = [#colorLiteral(red: 1, green: 0.5411764706, blue: 0.5019607843, alpha: 1), #colorLiteral(red: 1, green: 0.09019607843, blue: 0.2666666667, alpha: 1), #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1),
                                      #colorLiteral(red: 0.7254901961, green: 0.9647058824, blue: 0.7921568627, alpha: 1), #colorLiteral(red: 0, green: 0.9019607843, blue: 0.462745098, alpha: 1), #colorLiteral(red: 0, green: 0.7843137255, blue: 0.3254901961, alpha: 1),
                                      #colorLiteral(red: 0.9176470588, green: 0.5019607843, blue: 0.9882352941, alpha: 1), #colorLiteral(red: 0.8352941176, green: 0, blue: 0.9764705882, alpha: 1), #colorLiteral(red: 0.6666666667, green: 0, blue: 1, alpha: 1),
                                      #colorLiteral(red: 1, green: 1, blue: 0.5529411765, alpha: 1), #colorLiteral(red: 1, green: 0.9176470588, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.8392156863, blue: 0, alpha: 1),
@@ -33,7 +33,7 @@ open class ColorPickerViewController: UIViewController, UIPopoverPresentationCon
                                      #colorLiteral(red: 0.5176470588, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0, green: 0.8980392157, blue: 1, alpha: 1), #colorLiteral(red: 0, green: 0.7215686275, blue: 0.831372549, alpha: 1),
                                      #colorLiteral(red: 0.7411764706, green: 0.7411764706, blue: 0.7411764706, alpha: 1), #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1), #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)]
     
-    open var pickerSize = CGSize(width: 250, height: 250){
+    @objc open var pickerSize = CGSize(width: 250, height: 250){
         didSet{
             self.view.frame = CGRect(x: 0, y: 0, width: pickerSize.width, height: pickerSize.height)
             self.preferredContentSize = pickerSize
@@ -42,13 +42,13 @@ open class ColorPickerViewController: UIViewController, UIPopoverPresentationCon
         }
     }
     
-    open var allColors = [UIColor](){
+    @objc open var allColors = [UIColor](){
         didSet{
             colorPickerView.colors = allColors
         }
     }
     
-    open var scrollDirection: UICollectionViewScrollDirection = .horizontal{
+    @objc open var scrollDirection: UICollectionViewScrollDirection = .horizontal{
         didSet{
             colorPickerView.scrollDirection = scrollDirection
         }

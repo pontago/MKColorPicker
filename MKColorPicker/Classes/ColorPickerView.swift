@@ -10,12 +10,14 @@
 
 import UIKit
 
-public enum ColorPickerViewStyle {
+@objc
+public enum ColorPickerViewStyle: Int {
     case square
     case circle
 }
 
-public enum ColorPickerViewSelectStyle {
+@objc
+public enum ColorPickerViewSelectStyle: Int {
     case check
     case none
 }
